@@ -1,0 +1,13 @@
+format="$directory$git_branch$character"
+right_format = """$git_status$cmd_duration"""
+add_newline = false
+
+[character]
+success_symbol = "[❯](fg:#7AA2F7 bold)"
+
+[directory]
+format = "[](fg:#1A1D26 bg:none)[ ](fg:#7AA2F7 bg:#1A1D26)[$path](fg:#7AA2F7 bold bg:#1A1D26)[ ](fg:#1A1D26 bg:none)"
+style = "bg:none fg:#7AA2F7"
+truncation_length = 3
+truncate_to_repo = false
+

@@ -1,0 +1,267 @@
+@define-color background rgb(36, 40, 59);          /* Tokyo Night Storm #24283B */
+@define-color foreground rgb(192, 202, 245);      /* Tokyo Night Foreground #C0CAF5 */
+@define-color active rgb(122, 162, 247);          /* Tokyo Night Blue Accent #7AA2F7 */
+@define-color active-soft rgba(122, 162, 247, 0.4);/* Focus highlights */
+@define-color active-dim rgba(122, 162, 247, 0.15);/* Recessed module blocks */
+
+/* ── Global Styles ──────────────────────────────────────────────── */
+* {
+    font-size: 14px;
+    font-family: "JetBrainsMono Nerd Font", "JetBrainsMono NF";
+    min-width: 8px;
+    min-height: 0px;
+    border: none;
+    border-radius: 0px;
+    box-shadow: none;
+    text-shadow: none;
+    padding: 0px;
+}
+
+/* Waybar Window Frame */
+window#waybar {
+    transition-property: background-color;
+    transition-duration: 0.5s;
+    border-radius: 8px;
+    border: 2px solid @active;
+    background: rgba(36, 40, 59, 0.75);
+    color: @foreground;
+}
+
+/* Tooltips and Menus */
+menu,
+tooltip {
+    border-radius: 8px;
+    padding: 4px;
+    border: 1px solid @active;
+    background: rgba(36, 40, 59, 0.95);
+    color: @foreground;
+}
+
+menu label,
+tooltip label {
+    font-size: 14px;
+    color: @foreground;
+}
+
+/* ── Layout Containers ─────────────────────────────────────────── */
+.modules-left {
+    transition-property: background-color;
+    transition-duration: 0.5s;
+    margin: 6px;
+    border-radius: 4px;
+    background: rgba(36, 40, 59, 0.4);
+    color: @foreground;
+}
+
+.modules-right {
+    margin: 0px 6px 6px 6px;
+    border-radius: 4px;
+    background: rgba(36, 40, 59, 0.4);
+    color: @active;
+}
+
+/* ── Universal Module Blocks ────────────────────────────────────── */
+#gcpu,
+#custom-github,
+#memory,
+#disk,
+#together,
+#submap,
+#custom-weather,
+#custom-recorder,
+#connection,
+#cnoti,
+#brightness,
+#power,
+#custom-updates,
+#audio,
+#privacy,
+#sound,
+#custom-vpn,
+#custom-hotspot,
+#custom-power {
+    border-radius: 4px;
+    margin: 2px 2px 4px 2px;
+    background: @active-dim;
+}
+
+/* ── Component Specific Refinements ────────────────────────────── */
+#custom-notifications, #custom-github {
+    font-size: 14px;
+    padding: 2px 4px 0px 4px;
+}
+
+#custom-hotspot {
+    font-size: 14px;
+    padding-right: 2px;
+}
+
+#privacy-item {
+    padding: 6px 0px 6px 6px;
+}
+
+#gcpu {
+    padding: 8px 0px;
+}
+
+#custom-cpu-icon {
+    font-size: 25px;
+}
+
+#custom-cputemp,
+#disk,
+#memory,
+#cpu {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+#custom-dmark {
+    color: rgba(192, 202, 245, 0.3);
+}
+
+/* Workspaces Layout */
+#workspaces {
+    margin: 0px 2px;
+    padding: 4px 0px 0px 0px;
+    border-radius: 8px;
+}
+
+#workspaces button {
+    transition-property: background-color;
+    transition-duration: 0.5s;
+    background: transparent;
+    border-radius: 4px;
+    color: rgba(192, 202, 245, 0.3);
+}
+
+#workspaces button.urgent {
+    font-weight: bold;
+    color: @foreground;
+}
+
+#workspaces button.active {
+    padding: 4px 2px;
+    background: @active-soft;
+    color: @active;
+    border-radius: 4px;
+}
+
+/* Network & Bluetooth */
+#network.wifi {
+    padding-right: 4px;
+}
+
+#bluetooth {
+    padding-top: 2px;
+}
+
+#submap {
+    min-width: 0px;
+    margin: 4px 6px;
+}
+
+#custom-weather {
+    padding: 4px 0px;
+}
+
+/* Battery Blocks */
+#battery {
+    border-radius: 8px;
+    padding: 4px 0px;
+    margin: 4px 2px;
+}
+
+#clock {
+    font-weight: bold;
+    padding: 4px 2px 2px 2px;
+}
+
+#pulseaudio.mic {
+    border-radius: 4px;
+    color: @background;
+    background: rgba(192, 202, 245, 0.6);
+    padding-left: 4px;
+}
+
+/* ── Sleek Vertical Sliders ─────────────────────────────────────── */
+#backlight-slider,
+#pulseaudio-slider {
+    padding: 4px 0px;
+    margin: 0px;
+    background-color: transparent;
+}
+
+#backlight-slider scale,
+#pulseaudio-slider scale {
+    min-height: 80px;
+}
+
+#backlight-slider trough,
+#pulseaudio-slider trough {
+    margin: 4px 0px;
+    min-width: 6px;
+    min-height: 80px;
+    border-radius: 3px;
+    background-color: rgba(36, 40, 59, 0.8);
+}
+
+#backlight-slider highlight,
+#pulseaudio-slider highlight {
+    border-radius: 3px;
+    background-color: @active;
+}
+
+#backlight-slider slider,
+#pulseaudio-slider slider {
+    background-image: none;
+    background-color: transparent;
+    border-color: transparent;
+    box-shadow: none;
+    border: none;
+}
+
+/* ── Interactivity & Animations ────────────────────────────────── */
+#custom-power {
+    padding: 4px 6px;
+    color: @active;
+}
+
+#custom-power:hover {
+    background: @active-soft;
+    color: @active;
+}
+
+#submap,
+#tray > .needs-attention,
+#bluetooth.discoverable,
+#bluetooth.discovering,
+#bluetooth.pairable {
+    animation: blink-active 1s linear infinite alternate;
+}
+
+#battery.discharging.warning {
+    animation: blink-yellow 1s linear infinite alternate;
+}
+
+#battery.discharging.critical {
+    animation: blink-red 1s linear infinite alternate;
+}
+
+@keyframes blink-active {
+    to {
+        background-color: @active;
+        color: @background;
+    }
+}
+@keyframes blink-red {
+    to {
+        background-color: #f7768e; /* Tokyo Night Red */
+        color: @foreground;
+    }
+}
+@keyframes blink-yellow {
+    to {
+        background-color: #e0af68; /* Tokyo Night Yellow */
+    }
+}

@@ -1,0 +1,8 @@
+* {
+    background:     #24283BFF; /* Tokyo Night Storm main background */
+    background-alt: #1F2335FF; /* Slightly darker shade for the input/search bar */
+    foreground:     #7AA2F7FF; /* Tokyo Night Blue for all text */
+    selected:       #7AA2F7FF; /* Tokyo Night Blue accent */
+    active:         #9ECE6AFF; /* Tokyo Night Green for active states */
+    urgent:         #F7768EFF; /* Tokyo Night Red for urgent items */
+}
