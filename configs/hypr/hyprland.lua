@@ -16,7 +16,7 @@ hl.monitor({
 local terminal    = "alacritty"
 local fileManager = "alacritty -e yazi"
 local menu        = "rofi -show drun"
-local browser     = "brave-origin"
+local browser     = "zen-browser"
 
 -------------------
 ---- AUTOSTART ----
